@@ -1,7 +1,18 @@
  body {
 background-color: #171717;
+margin: 0;
+padding: 0;
 }
 
+.h-100 {
+  text-decoration: none;
+  color: #171717;
+}
+
+.h-100:hover {
+  transition: all 200ms ease-in-out;
+  opacity: 0.8;
+}
 
 
 
@@ -24,11 +35,11 @@ color: #525252;
 text-align: center;
 }
 
-ul {
+.hero ul {
   list-style: none;
 }
 
- li {
+ .hero li {
   display: inline-block;
     padding: 1em;
     margin-top: 40px;
@@ -38,6 +49,19 @@ ul {
     font-size: 30px;
     color: #2a2929;
 }
+
+
+iframe {
+  overscroll-behavior: contain;
+}
+
+.playlist {
+  margin: 50px;
+  padding: 30px;
+}
+
+
+
 
 
 
