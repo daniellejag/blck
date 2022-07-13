@@ -8,8 +8,8 @@
 
 const APIController = (function() {
 
-const clientId = 'e5a5dd04341a44d0a956208e3450fa0e';
-const clientSecret = 'fd522c8163f54137800f7a016aa44e57';
+const clientId = '';
+const clientSecret = '';
 
 
 const _getToken = async () => {
