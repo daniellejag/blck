@@ -2,7 +2,52 @@ body {
   background-color: #171717;
 }
 
-btn.dropdown-toggle  {
+
+
+
+#tokenSection{
+    display: none;
+}
+
+#deviceSection{
+    display: none;
+}
+
+.container{
+    padding: 20px;    
+    background-color: #78bc61ff;
+}
+
+#albumImage{
+    width: 300px;
+    float: left;
+    margin: 20px;
+}
+
+#trackTitle{
+    font-size:3em;
+}
+
+#trackArtist{
+    font-size:2em;
+}
+
+.welcomeText{
+    font-size:2em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*btn.dropdown-toggle  {
     width:150px;
     text-align:left;
 }
@@ -37,3 +82,4 @@ img {
 img.track {
     border: 1px solid #8a8a8a;
 }
+*/

@@ -1,26 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+ <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link
-href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-rel="stylesheet"
-integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-crossorigin="anonymous"
-/>
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-<link rel="stylesheet" href="style.css" />
-<script
-src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-crossorigin="anonymous"
-></script>
-<script src="https://kit.fontawesome.com/d6fa02203a.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="radio.css" />
+   <script src="src/app.js"></script>
+<title>Document</title>
   </head>
-  <body>
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark ps-6 pe-6">
+<div class="container-fluid">
+<a class="navbar-brand" href="index.html">Danielle Jagendorf</a> 
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="index.html" title="return back to the homepage">Home</a>
+</li>
+<li class="nav-item">
+<a class="nav-link active" aria-current="page" href="radio.html" title="radio">Radio</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="music.html" title="music">Music</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="about.html#contact" title="get my contact information">Contact me</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+
+<body onload="onPageLoad()">
+    <div class="container">
+
+        <div id="tokenSection" class="row">
+            <div class="col">
+                <p class="welcomeText">This is a javascript app that shows how to use the Spotify API to control the playback 
+                    of music (playlist or albums) on any of your devices connected to your spotify account.</p>
+                <p class="welcomeText">To use this app you need a Spotify client ID and client secret. You get these by 
+                    creating an app in the Spotify developers dashboard here 
+                    <a href="https://developer.spotify.com/dashboard/applications" target="_blank">https://developer.spotify.com/dashboard/applications</a> 
+                     and add https://makeratplay.github.io/SpotifyWebAPI/ in the "Redirect URIs" settings field.
+                </p>                    
+                <p  class="welcomeText"> 
+                    This app demostrates how the use the following APIs: 
+                    <ul>
+                        <li>https://accounts.spotify.com/authorize </li>
+                        <li>https://accounts.spotify.com/api/token </li>
+                    
+                        <li>https://api.spotify.com/v1/me/playlists </li>
+                        <li>https://api.spotify.com/v1/me/player/devices </li>
+                        <li>https://api.spotify.com/v1/me/player/play </li>
+                        <li>https://api.spotify.com/v1/me/player/pause </li>
+                        <li>https://api.spotify.com/v1/me/player/next </li>
+                        <li>https://api.spotify.com/v1/me/player/previous </li>
+                        <li>https://api.spotify.com/v1/me/player </li>
+                        <li>https://api.spotify.com/v1/playlists/{{PlaylistId}}/tracks </li>
+                        <li>https://api.spotify.com/v1/me/player/currently-playing </li>
+                        <li>https://api.spotify.com/v1/me/player/shuffle </li>
+                    </ul>
+                </p>                    
+                
+            </div>
+            <div class="col">
+                <div class="mb-3">
+                    <label for="clientId" class="form-label">Client ID</label>
+                    <input type="text" class="form-control" id="clientId" placeholder="">
+                </div>
+                <div class="mb-3">
+                    <label for="clientSecret" class="form-label">Client Secret</label>
+                    <input type="text" class="form-control" id="clientSecret" placeholder="">
+                </div>
+                <input class="btn btn-primary btn-lg" type="button" onclick="requestAuthorization()" value="Request Authorization"><br/>
+            </div>
+
+            <div class="col">
+                <p class="welcomeText" style="margin-top: 40px;"> I used this project to learn the Spotify API in order to create this project:</p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/H2HJ-LY7-lQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div id="deviceSection" class="row">
+            <div class="col">
+
+                <div class="mb-3">
+                    <label for="devices" class="form-label">Devices</label>
+                    <select id="devices" class="form-control">
+                    </select>
+                    <input class="btn btn-primary btn-sm mt-3" type="button" onclick="refreshDevices()" value="Refresh Devices">
+                    <input type="button" class="btn btn-dark btn-sm  mt-3" onclick="transfer()" value="Transfer">
+                </div>
+
+                <div class="mb-3">
+                    <label for="playlists" class="form-label">Playlists</label>
+                    <select id="playlists" class="form-control">
+                    </select>
+                    <input class="btn btn-primary btn-sm mt-3" type="button" onclick="refreshPlaylists()" value="Refresh Playlists">
+
+                </div>
+
+                <div class="mb-3">
+                    <label for="tracks" class="form-label">Tracks</label>
+                    <select id="tracks" class="form-control">
+                    </select>
+                    <input class="btn btn-primary btn-sm mt-3" type="button" onclick="fetchTracks()" value="Fetch Tracks">
+                </div>
+
+                <div class="mb-3">
+                    <label for="tracks" class="form-label">Album</label>
+                    <input id="album" class="form-control">
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <input type="button" class="btn btn-dark" onclick="previous()" value="Prev">
+                        <input type="button" class="btn btn-dark" onclick="play()" value="Play">
+                        <input type="button" class="btn btn-dark" onclick="shuffle()" value="Shuffle">
+                        <input type="button" class="btn btn-dark" onclick="pause()" value="Pause">
+                        <input type="button" class="btn btn-dark" onclick="next()" value="Next">
+                    </div>
+                </div>
+
+
+                <div class="row  mt-3">
+                    <div class="col">
+                        <h1> Currently Playing</h1>
+                        <input type="button" class="btn btn-primary btn-sm mt-3" onclick="currentlyPlaying()" value="Refresh Currently Playing">
+                        <div>
+                            <img id="albumImage" src="">
+                            <div id="trackTitle"></div>
+                            <div id="trackArtist"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row  mt-3">
+                    <div class="col">
+                        <div id="radioButtons"></div>
+                        <input type="button" class="btn btn-dark" onclick="saveNewRadioButton()" value="Add">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ps-6 pe-6">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">Danielle Jagendorf</a>
@@ -75,14 +226,14 @@ crossorigin="anonymous"
         </div>
       </div>
     </nav>
-  </nav>
+  </nav> -->
 
 
 
 
 
 
-  <div class="container">        
+<!-- <div class="container">        
         <form action="">
             <input type="hidden" id='hidden_token'>
             <div class="col-sm-6 form-group row mt-4 px-0">
@@ -110,7 +261,7 @@ crossorigin="anonymous"
             <div class="offset-md-1 col-sm-4" id="song-detail">                
             </div>
         </div>   
-    </div>
+    </div> -->
 
 
 
@@ -120,7 +271,7 @@ crossorigin="anonymous"
 
 
 
- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
@@ -130,6 +281,7 @@ crossorigin="anonymous"
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="src/index.js"></script>
-  </body>
-</html>
+-->
+
+
+
