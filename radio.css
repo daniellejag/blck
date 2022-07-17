@@ -1,8 +1,7 @@
 body {
-  background-color: #171717;
+  background-color: #272727;
+  
 }
-
-
 
 
 #tokenSection{
@@ -15,13 +14,15 @@ body {
 
 .container{
     padding: 20px;    
-    background-color: #78bc61ff;
+    background-color: #272727;
 }
+
+
 
 #albumImage{
     width: 300px;
-    float: left;
-    margin: 20px;
+    display: block;
+    margin: 0 auto;
 }
 
 #trackTitle{
@@ -38,48 +39,154 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-/*btn.dropdown-toggle  {
-    width:150px;
-    text-align:left;
+.form-control {
+cursor: pointer;
+border: none;
+border-radius: 55px;
+background: linear-gradient(145deg, #191919, #1e1e1e);
+box-shadow:  11px 11px 28px #101010,
+             -11px -11px 28px #282828;
+             
 }
 
-span.caret {
-    position: absolute;
-    left: 90%;
-    top: 45%;
+.form-control:hover {
+border-radius: 64px;
+background: linear-gradient(145deg, #1e1e1e, #191919);
+box-shadow:  19px 19px 38px #101010,
+             -19px -19px 38px #282828;
 }
 
-label {
-    padding-top:5px;
+#devices,
+#playlists {
+border-radius: 55px;
+background: linear-gradient(145deg, #191919, #1e1e1e);
+box-shadow:  11px 11px 28px #101010,
+             -11px -11px 28px #282828;
 }
 
-.form-label {
-    padding-left:0px !important;
+
+#playlists:hover {
+  border-radius: 64px;
+background: linear-gradient(145deg, #1e1e1e, #191919);
+box-shadow:  19px 19px 38px #101010,
+             -19px -19px 38px #282828;
 }
 
-img {
-    width:140px;
-    height:140px;
+
+#devices:hover {
+border-radius: 64px;
+background: linear-gradient(145deg, #1e1e1e, #191919);
+box-shadow:  19px 19px 38px #101010,
+             -19px -19px 38px #282828;
 }
 
-.btn-success {
-    background-color: #3b7d4a!important;
+#tracks {
+border-radius: 55px;
+background: linear-gradient(145deg, #191919, #1e1e1e);
+box-shadow:  11px 11px 28px #101010,
+             -11px -11px 28px #282828;
 }
 
-.btn-success:hover {
-    background-color: #4daf64!important;
+#tracks:hover {
+border-radius: 64px;
+background: linear-gradient(145deg, #1e1e1e, #191919);
+box-shadow:  19px 19px 38px #101010,
+             -19px -19px 38px #282828;
 }
 
-img.track {
-    border: 1px solid #8a8a8a;
+
+.btn { 
+color: #D1D1D1;
+border: none;
+background: #171717;
+box-shadow:  20px 20px 60px #090909,
+             -20px -20px 60px #252525;        
 }
-*/
+
+.btn:hover {
+border: none;
+background: #363535;
+box-shadow:  20px 20px 60px #090909,
+             -20px -20px 60px #252525;        
+}
+
+
+
+#album {
+background: #272727;
+box-shadow: inset 20px 20px 45px #1c1c1c,
+            inset -20px -20px 45px #323232;
+  border: black;
+  color: white;
+}
+
+label, h1 {
+  color: #D1D1D1;
+}
+
+h1 {
+  padding-top: 50px;
+  text-align: center
+}
+
+
+#deviceSection {
+  padding-top: 30px;
+  justify-content: center;
+}
+
+
+#actionbutton  {
+  justify-content: center;
+  text-align: center;
+   display: inline-flex;
+   align-items: center;
+ 
+}
+
+#trackTitle,
+#trackArtist {
+  color: #D1D1D1;
+  text-align: center;
+
+}
+
+
+#actionbuttonadd{
+  background: none;
+  border: none;
+  background: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+#radioButtons {
+  background: none;
+  border: none;
+  background: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+
+
+
+
+
+/* Parent background */
+
+
+
+/*.btn:hover {
+  transform: all 200ms ease-in-out;
+ 
+}*/
+
+
+
+
+
+
+
+
+
