@@ -251,17 +251,6 @@ box-shadow: 1px -1px 3px rgba(255, 255, 255, 0.1),
 }*/
 
 
- #login, #loggedin {
-        display: none;
-        color: white;
-      }
-      .text-overflow {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        width: 500px;
-        color: white;
-      }
 
 
 
