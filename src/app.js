@@ -1,6 +1,6 @@
-var redirect_uri = "http://localhost:5500/callback"
+//var redirect_uri = "http://localhost:5500/callback"
 //var redirect_uri = "https://daniellejag.github.io/blck"
-//redirect_uri = "http://127.0.0.1:5500/radio.html";
+var redirect_uri = "http://127.0.0.1:5500/radio.html";
 
 var client_id = ""; 
 var client_secret = "";
