@@ -1,4 +1,4 @@
-var redirect_uri = "https://chimerical-kringle-05fab3.netlify.app/radio.html"
+var redirect_uri = "http://localhost:8888/callback"
 //var redirect_uri = "https://daniellejag.github.io/blck"
 //redirect_uri = "http://127.0.0.1:5500/radio.html";
 
