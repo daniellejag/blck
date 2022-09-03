@@ -1,0 +1,74 @@
+body {
+  background: conic-gradient(at right top, rgb(17, 24, 39), rgb(243, 244, 246), rgb(17, 24, 39));
+}
+
+h1 {
+  font-weight: 600;
+  background-image: conic-gradient(#553c9a, #ee4b2b, #00c2cb, #553c9a);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 17em;
+  text-align: center;
+ line-height: 2.1em;
+}
+
+
+
+header {
+ background: #0b0c0c; 
+
+
+}
+
+.playlist-link {
+  text-decoration: none;
+background: #0b0c0c;
+background-blend-mode: normal,color-burn;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #eaedf2;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+    line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 16px;
+  padding: 16px 24px;
+  text-align: center;
+    width: 100%;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.playlist-link:hover,
+.playlist-link:active {
+  transition: all 200ms ease-in-out;
+  border: 3px solid #ee4b2b;
+  background: transparent;
+background-blend-mode: multiply;;
+  background-position: 0 0;
+  color: #0b0c0c;
+
+}
+
+.playlist-link:active {
+  opacity: .5;
+}
+
+
+@media (max-width: 846px) {
+  h1 {
+  display: none;
+  }
+}

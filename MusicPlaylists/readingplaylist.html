@@ -21,29 +21,32 @@
       src="https://kit.fontawesome.com/d6fa02203a.js"
       crossorigin="anonymous"
     ></script>
-    <title>Coding Playlist</title>
+    <title>Reading Playlist</title>
   </head>
   <body>
+     <video autoplay muted loop id="myVideo">
+  <source src="https://storage.coverr.co/videos/2WNiNHA8DLxluP9t73a1P62Z4TUJ3Yfq?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjYyMTgwNTcwfQ.g7eDFFWkJ5B4hYaboAfmNKhhzhGOxyBw1u6g-WazzVQ" " type="video/mp4">
+</video>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark ps-6 pe-6">
 <div class="container-fluid">
-<a class="navbar-brand" href="index.html">Danielle Jagendorf</a> 
+<a class="navbar-brand" href="/index.html">Danielle Jagendorf</a> 
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
 </button>
 <div class="collapse navbar-collapse" id="navbarNav">
 <ul class="navbar-nav">
 <li class="nav-item">
-<a class="nav-link" href="index.html" title="return back to the homepage">Home</a>
+<a class="nav-link" href="/index.html" title="return back to the homepage">Home</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" aria-current="page" href="radio.html" title="radio">Radio</a>
+<a class="nav-link" aria-current="page" href="/radio.html" title="radio">Radio</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" aria-current="page" href="music.html" title="music">Music</a>
+<a class="nav-link" aria-current="page" href="/music.html" title="music">Music</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="about.html#contact" title="get my contact information">Contact me</a>
+<a class="nav-link" href="/about.html#contact" title="get my contact information">Contact me</a>
 </li>
 </ul>
 </div>
@@ -51,20 +54,48 @@
 </nav>
 
 
-<body>
-<a href="http://127.0.0.1:5501/music.html">Music</a>
+
+ 
 
 
-<div clas="container-fluid">
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0Js4PdGBQYeILX4mQnazXZ?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
 
+
+
+<div class="playlist">
+<div class="inner-playlist">
+
+<span id="return-to-music-homepage">
+  <a href="http://127.0.0.1:5501/music.html" id="return-to-music-homepage">Explore More Music</a>
+  <span>
+
+<div clas="container-fluid" id="iframe">
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0Js4PdGBQYeILX4mQnazXZ?utm_source=generator" width="60%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+</div>
+
+</div>
 </div>
 
 
+<body>
+  <html>
 
 
 
+<script>
+// Get the video
+var video = document.getElementById("myVideo");
 
+// Get the button
+var btn = document.getElementById("myBtn");
 
-  </body>
-</html>
+// Pause and play the video, and change the button text
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
+</script>

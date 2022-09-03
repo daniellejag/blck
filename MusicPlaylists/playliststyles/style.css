@@ -1,3 +1,73 @@
-body {
- background-color: #323438;
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
 }
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+
+
+
+iframe {
+box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+#return-to-music-homepage {
+  color: azure;
+  text-decoration: none;
+  line-height: 5em;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+#return-to-music-homepage:hover {
+  transform: all 200ms ease-in-out;
+  color: rgb(66, 73, 71);
+}
+
+
+.playlist {
+  position:relative;
+  text-align:center;
+  color:white;
+}
+
+.inner-playlist {
+  height:65vh;
+  width:100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
