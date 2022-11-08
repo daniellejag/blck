@@ -1,5 +1,5 @@
  body {
-background-color: #1D1D1D;
+
 margin: 0;
 padding: 0;
 }
@@ -7,7 +7,7 @@ padding: 0;
 .h-100 {
   text-decoration: none;
   color: #F1F1F1;
-  background-color: #262626;
+  background-color: conic-gradient(at left bottom, rgb(199, 210, 254), rgb(71, 85, 105), rgb(199, 210, 254))
 }
 
 .h-100:hover {
@@ -23,12 +23,12 @@ display: flex;
 justify-content: center;
 align-items: center;
 text-align: center;
+
 }
 
 
 .hero h1 {
 font-size: 5em;
-margin-bottom: 0.2em;
 text-align: center;
 font-family: 'Michroma', sans-serif;
 }
@@ -44,8 +44,11 @@ h1 {
 
 #frontend, span {
   font-size: 20px;
-  color: #F1F1F1;
   font-weight: 300;
+    background-image: radial-gradient( rgb(213, 208, 210), rgb(35, 37, 38));
+ color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 
@@ -75,6 +78,8 @@ iframe {
 }
 
 
+
+
 a {
   text-decoration: none;
 }
@@ -82,7 +87,10 @@ a {
 
 .projects {
 padding: 50px;
-
+margin: 0 auto;
+display: block;
+background: #1D1D1D;
+position: relative;
 }
 
 
@@ -95,7 +103,7 @@ margin: 0 auto;
 
 
 .languages {
- line-height: 3em;
+  line-height: 3em;
   background-color: #111111;
   color: #F1F1F1;
   padding-top: 70px;
@@ -107,13 +115,14 @@ margin: 0 auto;
   color: #F1F1F1;
   background: radial-gradient(77.6% 94.7% at 81.2% 50%, rgb(61, 63, 138) 0%, rgb(29, 29, 29) 100%);
   text-align: center;
-   
+  padding-bottom: 90px;
+  padding-top: 80px;
 }
 
 #design {
   height: 60px;
   float: left;
-position: relative;
+  position: relative;
 }
 
 h3 {
@@ -139,3 +148,34 @@ h2 {
   text-align: center;
   line-height: 2.1em;
 }
+
+
+h4 {
+  font-size: 30px;
+  font-weight: 600;
+  font-family: 'Michroma', sans-serif;
+  background-image: linear-gradient( rgb(85, 145, 179) 15%, rgb(138, 128, 250) 100%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+ padding-bottom: 8px;
+}
+
+
+
+.proficient {
+  padding-bottom: 40px;
+  font-size: 10px;
+  text-align: center;
+  display: block;
+  font-weight: 500;
+  background: radial-gradient(77.6% 94.7% at 81.2% 50%, rgb(61, 63, 138) 0%, rgb(29, 29, 29) 100%);
+  color: #F1F1F1;
+}
+
+#proficient-item {
+max-width: 30px;
+margin: 2px;
+}
+
+

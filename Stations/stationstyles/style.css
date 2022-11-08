@@ -1,21 +1,8 @@
-/* Style the video: 100% width and height to cover the entire window */
-#myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
+
+body {
+  background-color: #000;
 }
 
-/* Add some content at the bottom of the video/page */
-.content {
-  position: fixed;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
-  width: 100%;
-  padding: 20px;
-}
 
 /* Style the button used to pause/play the video */
 #myBtn {
@@ -37,6 +24,12 @@
 
 iframe {
 box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  width: 600px;
 }
 
 
@@ -53,35 +46,24 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
   color: rgb(66, 73, 71);
 }
 
+span {
 
-.playlist {
-  position:relative;
-  text-align:center;
-  color:white;
-}
-
-.inner-playlist {
-  height:65vh;
-  width:100%;
-  margin: 0;
-  padding: 0;
-}
-
-iframe, #iframereading {
   position: fixed;
-  top: 50%;
+  top: 58%;
   left: 50%;
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
-  width: 700px;
 }
-
+ 
 
 @media(max-width: 415px){ 
 iframe {
   width: 300px;
 }
 }
+
+
+
 
 
 
